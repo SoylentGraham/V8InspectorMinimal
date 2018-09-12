@@ -1,0 +1,3 @@
+[submodule "src/SoyLib"]
+	path = src/SoyLib
+	url = https://github.com/SoylentGraham/SoyLib.git
