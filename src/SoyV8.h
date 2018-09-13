@@ -87,7 +87,7 @@ namespace v8
 	void			CopyToTypedArray(v8::Isolate& Isolate,ArrayBridge<uint8_t>&& Values,Local<v8::Value> ArrayHandle);
 
 	
-	std::string		GetString(Local<Value> Str);
+	std::string		EnumString(v8::Isolate& Isolate,Local<Value> Str);
 	Local<Value>	GetString(v8::Isolate& Isolate,const std::string& Str);
 	Local<Value>	GetString(v8::Isolate& Isolate,const char* Str);
 	Local<Function>	GetFunction(Local<Context> Context,Local<Object> This,const std::string& FunctionName);
@@ -121,7 +121,7 @@ namespace v8
 class V8Exception : public std::exception
 {
 public:
-	V8Exception(v8::TryCatch& TryCatch,const std::string& Context);
+	V8Exception(v8::TryCatch& TryCatch,v8::Isolate& Isolate,const std::string& Context);
 
 	virtual const char* what() const __noexcept
 	{

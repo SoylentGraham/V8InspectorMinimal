@@ -14,7 +14,7 @@ bool ReportDefinedReturns = false;
 
 
 
-V8Exception::V8Exception(v8::TryCatch& TryCatch,const std::string& Context) :
+V8Exception::V8Exception(v8::TryCatch& TryCatch,v8::Isolate& Isolate,const std::string& Context) :
 	mError	( Context )
 {
 	//	get the exception from v8
@@ -27,7 +27,7 @@ V8Exception::V8Exception(v8::TryCatch& TryCatch,const std::string& Context) :
 	}
 
 	//	get the description
-	String::Utf8Value ExceptionStr(Exception);
+	String::Utf8Value ExceptionStr( &Isolate, Exception);
 	auto ExceptionCStr = *ExceptionStr;
 	if ( ExceptionCStr == nullptr )
 	{
@@ -49,8 +49,8 @@ V8Exception::V8Exception(v8::TryCatch& TryCatch,const std::string& Context) :
 	{
 		for ( int fi=0;	fi<StackTrace->GetFrameCount();	fi++ )
 		{
-			auto Frame = StackTrace->GetFrame(fi);
-			String::Utf8Value FuncName( Frame->GetFunctionName() );
+			auto Frame = StackTrace->GetFrame( &Isolate, fi );
+			String::Utf8Value FuncName( &Isolate, Frame->GetFunctionName() );
 			mError += "\n";
 			mError += "in ";
 			mError += *FuncName;
@@ -294,15 +294,15 @@ void v8::EnumArray(v8::Local<v8::Value> ValueHandle,ArrayBridge<int>& IntArray,c
 
 
 
-std::string v8::GetString(Local<Value> Str)
+std::string v8::EnumString(v8::Isolate& Isolate,Local<Value> StringHandle)
 {
-	if ( !Str->IsString() )
-		throw Soy::AssertException("Not a string");
+	//	do we want the string representation, or only if it IS a string?
+	auto StringValue = v8::SafeCast<String>(StringHandle);
+	String::Utf8Value ExceptionStr( &Isolate, StringValue );
 	
-	String::Utf8Value ExceptionStr(Str);
 	const auto* ExceptionCStr = *ExceptionStr;
 	if ( ExceptionCStr == nullptr )
-		ExceptionCStr = "<null> (Possibly not a string)";
+		ExceptionCStr = "<null>";
 	
 	std::string NewStr( ExceptionCStr );
 	return NewStr;

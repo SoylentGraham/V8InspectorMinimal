@@ -239,11 +239,13 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 	std::Debug << "Open chrome inspector: " << GetChromeDebuggerUrl() << std::endl;
 	
 	auto* Session = mSession.get();
-	auto SendMessageToSession = [&](const std::string& Message)
+	auto SendMessageToSession = [=](const std::string& Message)
 	{
 		Array<uint8_t> MessageBuffer;
 		std::Debug << "Message=" << Message << std::endl;
 		Soy::StringToArray( Message, GetArrayBridge(MessageBuffer) );
+		MessageBuffer.PushBack(0);
+		MessageBuffer.PopBack();
 		v8_inspector::StringView MessageString( MessageBuffer.GetArray(), MessageBuffer.GetSize() );
 		Session->dispatchProtocolMessage(MessageString);
 	};
@@ -296,9 +298,9 @@ void MessageHandler(v8::Local<v8::Message> message, v8::Local<v8::Value> excepti
 		std::Debug << "exception: stack size x" << StackSize << std::endl;
 		for ( int i=0;	i<StackSize;	i++ )
 		{
-			auto Frame = stack->GetFrame(i);
-			auto ScriptName = v8::GetString(Frame->GetScriptName());
-			auto FuncName = v8::GetString(Frame->GetFunctionName());
+			auto Frame = stack->GetFrame(isolate_,i);
+			auto ScriptName = v8::EnumString(*isolate_,Frame->GetScriptName());
+			auto FuncName = v8::EnumString(*isolate_,Frame->GetFunctionName());
 			std::Debug << "stack #" << i << " " << ScriptName << ", " << FuncName << "()" << std::endl;
 		}
 	}
