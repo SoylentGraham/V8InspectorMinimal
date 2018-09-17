@@ -10,7 +10,7 @@
 #include "libplatform/libplatform.h"
 #include "v8.h"
 #include "inspector_agent.h"
-
+#include <SoyFilesystem.h>
 using namespace v8;
 using namespace inspector;
 
@@ -111,9 +111,15 @@ void Print(const FunctionCallbackInfo<Value>& args) {
 
 int main(int argc, char* argv[]) {
   // Initialize V8.
-  V8::InitializeICUDefaultLocation(argv[0]);
-  V8::InitializeExternalStartupData(argv[0]);
-  Platform* platform = platform::CreateDefaultPlatform();
+	std::string DataLocation;
+	DataLocation = ::Platform::GetAppResourcesDirectory();
+	//RootDir += "Data_dlib/";
+	//RootDir += "Data_Posenet/";
+	DataLocation += "v8Runtime/";
+
+  V8::InitializeICUDefaultLocation( DataLocation.c_str() );
+  V8::InitializeExternalStartupData( DataLocation.c_str() );
+	v8::Platform* platform = platform::CreateDefaultPlatform();
   V8::InitializePlatform(platform);
   V8::Initialize();
 
@@ -142,12 +148,18 @@ int main(int argc, char* argv[]) {
     agent->Start(isolate, platform, argv[1]);
     agent->PauseOnNextJavascriptStatement("Break on start");
 
+	  std::string ScriptFilename;
+	  ScriptFilename = ::Platform::GetAppResourcesDirectory();
+	  //RootDir += "Data_dlib/";
+	  //RootDir += "Data_Posenet/";
+	  ScriptFilename += "sample.js";
+
     Local<String> file_name =
-          String::NewFromUtf8(isolate, argv[1], NewStringType::kNormal)
+          String::NewFromUtf8(isolate, ScriptFilename.c_str(), NewStringType::kNormal)
               .ToLocalChecked();
       Local<String> source;
-      if (!ReadFile(isolate, argv[1]).ToLocal(&source)) {
-        fprintf(stderr, "Error reading '%s'\n", argv[1]);
+      if (!ReadFile(isolate, ScriptFilename.c_str()).ToLocal(&source)) {
+        fprintf(stderr, "Error reading '%s'\n", ScriptFilename.c_str());
         return 1;
       }
       bool success = ExecuteString(isolate, source, file_name, false, true, agent);

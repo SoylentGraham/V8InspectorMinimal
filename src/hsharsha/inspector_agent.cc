@@ -283,7 +283,6 @@ bool Agent::StartIoThread(bool wait_for_connect) {
   if (io_ != nullptr)
     return true;
 
-	assert(false);
   assert(client_ != nullptr);
 /*
   enabled_ = true;
