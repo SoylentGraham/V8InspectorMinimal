@@ -18,42 +18,6 @@
 		BF6554042132C4D9003E4241 /* DEPS in Resources */ = {isa = PBXBuildFile; fileRef = BF6553C82132C4D9003E4241 /* DEPS */; };
 		BF6554052132C4D9003E4241 /* OWNERS in Resources */ = {isa = PBXBuildFile; fileRef = BF6553CC2132C4D9003E4241 /* OWNERS */; };
 		BF6554062132C4D9003E4241 /* PRESUBMIT.py in Resources */ = {isa = PBXBuildFile; fileRef = BF6553CD2132C4D9003E4241 /* PRESUBMIT.py */; };
-		BF6554072132C4D9003E4241 /* lib_wasm_fuzzer_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DA2132C4D9003E4241 /* lib_wasm_fuzzer_common.a */; };
-		BF6554082132C4D9003E4241 /* libcctest_sources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DB2132C4D9003E4241 /* libcctest_sources.a */; };
-		BF6554092132C4D9003E4241 /* libfuzzer_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DC2132C4D9003E4241 /* libfuzzer_support.a */; };
-		BF65540A2132C4D9003E4241 /* libgmock_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DD2132C4D9003E4241 /* libgmock_main.a */; };
-		BF65540B2132C4D9003E4241 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DE2132C4D9003E4241 /* libgtest.a */; };
-		BF65540C2132C4D9003E4241 /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553DF2132C4D9003E4241 /* libicui18n.a */; };
-		BF65540D2132C4D9003E4241 /* libicuuc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E02132C4D9003E4241 /* libicuuc.a */; };
-		BF65540E2132C4D9003E4241 /* libinspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E12132C4D9003E4241 /* libinspector.a */; };
-		BF65540F2132C4D9003E4241 /* libjson_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E22132C4D9003E4241 /* libjson_fuzzer.a */; };
-		BF6554102132C4D9003E4241 /* libmulti_return_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E32132C4D9003E4241 /* libmulti_return_fuzzer.a */; };
-		BF6554112132C4D9003E4241 /* liboptions_sources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E42132C4D9003E4241 /* liboptions_sources.a */; };
-		BF6554122132C4D9003E4241 /* libparser_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E52132C4D9003E4241 /* libparser_fuzzer.a */; };
-		BF6554132132C4D9003E4241 /* libregexp_builtins_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E62132C4D9003E4241 /* libregexp_builtins_fuzzer.a */; };
-		BF6554142132C4D9003E4241 /* libregexp_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E72132C4D9003E4241 /* libregexp_fuzzer.a */; };
-		BF6554152132C4D9003E4241 /* libtorque_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E82132C4D9003E4241 /* libtorque_base.a */; };
-		BF6554162132C4D9003E4241 /* libtorque_generated_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553E92132C4D9003E4241 /* libtorque_generated_initializers.a */; };
-		BF6554172132C4D9003E4241 /* libunittests_sources.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553EA2132C4D9003E4241 /* libunittests_sources.a */; };
-		BF6554182132C4D9003E4241 /* libv8_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553EB2132C4D9003E4241 /* libv8_base.a */; };
-		BF6554192132C4D9003E4241 /* libv8_external_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553EC2132C4D9003E4241 /* libv8_external_snapshot.a */; };
-		BF65541A2132C4D9003E4241 /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553ED2132C4D9003E4241 /* libv8_init.a */; };
-		BF65541B2132C4D9003E4241 /* libv8_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553EE2132C4D9003E4241 /* libv8_initializers.a */; };
-		BF65541C2132C4D9003E4241 /* libv8_libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553EF2132C4D9003E4241 /* libv8_libbase.a */; };
-		BF65541D2132C4D9003E4241 /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F02132C4D9003E4241 /* libv8_libplatform.a */; };
-		BF65541E2132C4D9003E4241 /* libv8_libsampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F12132C4D9003E4241 /* libv8_libsampler.a */; };
-		BF65541F2132C4D9003E4241 /* libwasm_async_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F22132C4D9003E4241 /* libwasm_async_fuzzer.a */; };
-		BF6554202132C4D9003E4241 /* libwasm_code_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F32132C4D9003E4241 /* libwasm_code_fuzzer.a */; };
-		BF6554212132C4D9003E4241 /* libwasm_compile_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F42132C4D9003E4241 /* libwasm_compile_fuzzer.a */; };
-		BF6554222132C4D9003E4241 /* libwasm_data_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F52132C4D9003E4241 /* libwasm_data_section_fuzzer.a */; };
-		BF6554232132C4D9003E4241 /* libwasm_function_sigs_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F62132C4D9003E4241 /* libwasm_function_sigs_section_fuzzer.a */; };
-		BF6554242132C4D9003E4241 /* libwasm_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F72132C4D9003E4241 /* libwasm_fuzzer.a */; };
-		BF6554252132C4D9003E4241 /* libwasm_globals_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F82132C4D9003E4241 /* libwasm_globals_section_fuzzer.a */; };
-		BF6554262132C4D9003E4241 /* libwasm_imports_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553F92132C4D9003E4241 /* libwasm_imports_section_fuzzer.a */; };
-		BF6554272132C4D9003E4241 /* libwasm_memory_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553FA2132C4D9003E4241 /* libwasm_memory_section_fuzzer.a */; };
-		BF6554282132C4D9003E4241 /* libwasm_module_runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553FB2132C4D9003E4241 /* libwasm_module_runner.a */; };
-		BF6554292132C4D9003E4241 /* libwasm_names_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553FC2132C4D9003E4241 /* libwasm_names_section_fuzzer.a */; };
-		BF65542A2132C4D9003E4241 /* libwasm_types_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6553FD2132C4D9003E4241 /* libwasm_types_section_fuzzer.a */; };
 		BF689AC620D6C80D000BC812 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF689AC520D6C80D000BC812 /* CoreGraphics.framework */; };
 		BF689AC820D6C811000BC812 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF689AC720D6C811000BC812 /* ApplicationServices.framework */; };
 		BF689AD120D6DA42000BC812 /* SoyGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF689ACF20D6DA42000BC812 /* SoyGraphics.cpp */; };
@@ -71,6 +35,44 @@
 		BF6EB33D21111D7A00FC991B /* SoyH264.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6EB33C21111D7A00FC991B /* SoyH264.cpp */; };
 		BF7225AA1BADCB3B00550AD8 /* SoyStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7225A81BADCB3B00550AD8 /* SoyStream.cpp */; };
 		BF7225AD1BADCC3900550AD8 /* SoyProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7225AB1BADCC3900550AD8 /* SoyProtocol.cpp */; };
+		BF82EC872150462200BC78D7 /* http_parser.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF82EC792150462200BC78D7 /* http_parser.cc */; };
+		BF82EC882150462200BC78D7 /* inspector_agent.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF82EC7B2150462200BC78D7 /* inspector_agent.cc */; };
+		BF82EC8C2150462200BC78D7 /* js_protocol.json in Resources */ = {isa = PBXBuildFile; fileRef = BF82EC832150462200BC78D7 /* js_protocol.json */; };
+		BF82EC8D2150462200BC78D7 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF82EC842150462200BC78D7 /* main.cc */; };
+		BF82EC8E2150462200BC78D7 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BF82EC852150462200BC78D7 /* Readme.md */; };
+		BF82EC8F2150462200BC78D7 /* sample.js in Resources */ = {isa = PBXBuildFile; fileRef = BF82EC862150462200BC78D7 /* sample.js */; };
+		BF82EC9021504CFF00BC78D7 /* inspector_io.cc in Sources */ = {isa = PBXBuildFile; fileRef = BF82EC7D2150462200BC78D7 /* inspector_io.cc */; };
+		BF8757CB214AC16B00024300 /* libv8_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757AE214AC16900024300 /* libv8_initializers.a */; };
+		BF8757CC214AC16B00024300 /* libv8_libsampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757AF214AC16A00024300 /* libv8_libsampler.a */; };
+		BF8757CD214AC16B00024300 /* libtorque_generated_initializers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B0214AC16A00024300 /* libtorque_generated_initializers.a */; };
+		BF8757CE214AC16B00024300 /* libwasm_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B1214AC16A00024300 /* libwasm_fuzzer.a */; };
+		BF8757CF214AC16B00024300 /* libwasm_module_runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B2214AC16A00024300 /* libwasm_module_runner.a */; };
+		BF8757D0214AC16B00024300 /* libwasm_async_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B3214AC16A00024300 /* libwasm_async_fuzzer.a */; };
+		BF8757D1214AC16B00024300 /* libv8_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B4214AC16A00024300 /* libv8_base.a */; };
+		BF8757D2214AC16B00024300 /* libv8_external_snapshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B5214AC16A00024300 /* libv8_external_snapshot.a */; };
+		BF8757D3214AC16B00024300 /* libmulti_return_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B6214AC16A00024300 /* libmulti_return_fuzzer.a */; };
+		BF8757D4214AC16B00024300 /* libregexp_builtins_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B7214AC16A00024300 /* libregexp_builtins_fuzzer.a */; };
+		BF8757D5214AC16B00024300 /* libv8_libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757B8214AC16A00024300 /* libv8_libbase.a */; };
+		BF8757D7214AC16B00024300 /* libv8_libplatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BA214AC16A00024300 /* libv8_libplatform.a */; };
+		BF8757D8214AC16B00024300 /* libfuzzer_support.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BB214AC16A00024300 /* libfuzzer_support.a */; };
+		BF8757D9214AC16B00024300 /* libwasm_code_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BC214AC16A00024300 /* libwasm_code_fuzzer.a */; };
+		BF8757DA214AC16B00024300 /* libwasm_compile_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BD214AC16A00024300 /* libwasm_compile_fuzzer.a */; };
+		BF8757DB214AC16B00024300 /* libwasm_imports_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BE214AC16A00024300 /* libwasm_imports_section_fuzzer.a */; };
+		BF8757DC214AC16B00024300 /* libregexp_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757BF214AC16A00024300 /* libregexp_fuzzer.a */; };
+		BF8757DD214AC16B00024300 /* libwasm_types_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C0214AC16B00024300 /* libwasm_types_section_fuzzer.a */; };
+		BF8757DE214AC16B00024300 /* libjson_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C1214AC16B00024300 /* libjson_fuzzer.a */; };
+		BF8757DF214AC16B00024300 /* lib_wasm_fuzzer_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C2214AC16B00024300 /* lib_wasm_fuzzer_common.a */; };
+		BF8757E0214AC16B00024300 /* libwasm_memory_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C3214AC16B00024300 /* libwasm_memory_section_fuzzer.a */; };
+		BF8757E1214AC16B00024300 /* libwasm_function_sigs_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C4214AC16B00024300 /* libwasm_function_sigs_section_fuzzer.a */; };
+		BF8757E2214AC16B00024300 /* libwasm_names_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C5214AC16B00024300 /* libwasm_names_section_fuzzer.a */; };
+		BF8757E3214AC16B00024300 /* libparser_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C6214AC16B00024300 /* libparser_fuzzer.a */; };
+		BF8757E4214AC16B00024300 /* libwasm_data_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C7214AC16B00024300 /* libwasm_data_section_fuzzer.a */; };
+		BF8757E5214AC16B00024300 /* libv8_init.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C8214AC16B00024300 /* libv8_init.a */; };
+		BF8757E6214AC16B00024300 /* libwasm_globals_section_fuzzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757C9214AC16B00024300 /* libwasm_globals_section_fuzzer.a */; };
+		BF8757E7214AC16B00024300 /* libtorque_base.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757CA214AC16B00024300 /* libtorque_base.a */; };
+		BF8757EB214AC25400024300 /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757E8214AC25300024300 /* libicui18n.a */; };
+		BF8757EC214AC25400024300 /* libinspector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757E9214AC25300024300 /* libinspector.a */; };
+		BF8757ED214AC25400024300 /* libicuuc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8757EA214AC25400024300 /* libicuuc.a */; };
 		BF89F6B71B4AB9DC00F58561 /* SoyAssert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6B41B4AB9DC00F58561 /* SoyAssert.cpp */; };
 		BF89F6BB1B4AE28F00F58561 /* SoyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6B81B4AE28F00F58561 /* SoyMath.cpp */; };
 		BF89F6BF1B4B14CD00F58561 /* SoyVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6BC1B4B14CD00F58561 /* SoyVector.cpp */; };
@@ -90,7 +92,6 @@
 		BFDE38031C8B446A00D10F02 /* SoyUnity.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFDE38011C8B446A00D10F02 /* SoyUnity.mm */; };
 		BFE572801B541B3400B17528 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5727F1B541B3400B17528 /* CoreServices.framework */; };
 		BFE572851B544E3400B17528 /* SoyFilesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE572831B544E3400B17528 /* SoyFilesystem.cpp */; };
-		BFFFA8142147D88700FA3A8B /* v8Minimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFFFA8132147D88600FA3A8B /* v8Minimal.cpp */; };
 		EB0EA56F2110BA27008D6DAA /* libdlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0EA56E2110BA27008D6DAA /* libdlib.a */; };
 		EB0EA5712110BAD7008D6DAA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0EA5702110BAD7008D6DAA /* Accelerate.framework */; };
 		EB6D678321136A4E00687768 /* SoyBase64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB6D678121136A4E00687768 /* SoyBase64.cpp */; };
@@ -165,42 +166,6 @@
 		BF6553D62132C4D9003E4241 /* v8-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-version.h"; sourceTree = "<group>"; };
 		BF6553D72132C4D9003E4241 /* v8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v8.h; sourceTree = "<group>"; };
 		BF6553D82132C4D9003E4241 /* v8config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v8config.h; sourceTree = "<group>"; };
-		BF6553DA2132C4D9003E4241 /* lib_wasm_fuzzer_common.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = lib_wasm_fuzzer_common.a; sourceTree = "<group>"; };
-		BF6553DB2132C4D9003E4241 /* libcctest_sources.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcctest_sources.a; sourceTree = "<group>"; };
-		BF6553DC2132C4D9003E4241 /* libfuzzer_support.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfuzzer_support.a; sourceTree = "<group>"; };
-		BF6553DD2132C4D9003E4241 /* libgmock_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmock_main.a; sourceTree = "<group>"; };
-		BF6553DE2132C4D9003E4241 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgtest.a; sourceTree = "<group>"; };
-		BF6553DF2132C4D9003E4241 /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicui18n.a; sourceTree = "<group>"; };
-		BF6553E02132C4D9003E4241 /* libicuuc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicuuc.a; sourceTree = "<group>"; };
-		BF6553E12132C4D9003E4241 /* libinspector.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libinspector.a; sourceTree = "<group>"; };
-		BF6553E22132C4D9003E4241 /* libjson_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjson_fuzzer.a; sourceTree = "<group>"; };
-		BF6553E32132C4D9003E4241 /* libmulti_return_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmulti_return_fuzzer.a; sourceTree = "<group>"; };
-		BF6553E42132C4D9003E4241 /* liboptions_sources.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboptions_sources.a; sourceTree = "<group>"; };
-		BF6553E52132C4D9003E4241 /* libparser_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libparser_fuzzer.a; sourceTree = "<group>"; };
-		BF6553E62132C4D9003E4241 /* libregexp_builtins_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libregexp_builtins_fuzzer.a; sourceTree = "<group>"; };
-		BF6553E72132C4D9003E4241 /* libregexp_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libregexp_fuzzer.a; sourceTree = "<group>"; };
-		BF6553E82132C4D9003E4241 /* libtorque_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtorque_base.a; sourceTree = "<group>"; };
-		BF6553E92132C4D9003E4241 /* libtorque_generated_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtorque_generated_initializers.a; sourceTree = "<group>"; };
-		BF6553EA2132C4D9003E4241 /* libunittests_sources.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libunittests_sources.a; sourceTree = "<group>"; };
-		BF6553EB2132C4D9003E4241 /* libv8_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_base.a; sourceTree = "<group>"; };
-		BF6553EC2132C4D9003E4241 /* libv8_external_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_external_snapshot.a; sourceTree = "<group>"; };
-		BF6553ED2132C4D9003E4241 /* libv8_init.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_init.a; sourceTree = "<group>"; };
-		BF6553EE2132C4D9003E4241 /* libv8_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_initializers.a; sourceTree = "<group>"; };
-		BF6553EF2132C4D9003E4241 /* libv8_libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libbase.a; sourceTree = "<group>"; };
-		BF6553F02132C4D9003E4241 /* libv8_libplatform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libplatform.a; sourceTree = "<group>"; };
-		BF6553F12132C4D9003E4241 /* libv8_libsampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libsampler.a; sourceTree = "<group>"; };
-		BF6553F22132C4D9003E4241 /* libwasm_async_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_async_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F32132C4D9003E4241 /* libwasm_code_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_code_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F42132C4D9003E4241 /* libwasm_compile_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_compile_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F52132C4D9003E4241 /* libwasm_data_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_data_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F62132C4D9003E4241 /* libwasm_function_sigs_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_function_sigs_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F72132C4D9003E4241 /* libwasm_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F82132C4D9003E4241 /* libwasm_globals_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_globals_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553F92132C4D9003E4241 /* libwasm_imports_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_imports_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553FA2132C4D9003E4241 /* libwasm_memory_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_memory_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553FB2132C4D9003E4241 /* libwasm_module_runner.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_module_runner.a; sourceTree = "<group>"; };
-		BF6553FC2132C4D9003E4241 /* libwasm_names_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_names_section_fuzzer.a; sourceTree = "<group>"; };
-		BF6553FD2132C4D9003E4241 /* libwasm_types_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_types_section_fuzzer.a; sourceTree = "<group>"; };
 		BF680CBC1B582356009F6E1C /* SoyTypes_CoreFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SoyTypes_CoreFoundation.h; path = src/SoyTypes_CoreFoundation.h; sourceTree = "<group>"; };
 		BF689AC520D6C80D000BC812 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BF689AC720D6C811000BC812 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
@@ -233,6 +198,53 @@
 		BF7225A91BADCB3B00550AD8 /* SoyStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoyStream.h; path = src/SoyStream.h; sourceTree = "<group>"; };
 		BF7225AB1BADCC3900550AD8 /* SoyProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoyProtocol.cpp; path = src/SoyProtocol.cpp; sourceTree = "<group>"; };
 		BF7225AC1BADCC3900550AD8 /* SoyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoyProtocol.h; path = src/SoyProtocol.h; sourceTree = "<group>"; };
+		BF82EC782150462200BC78D7 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		BF82EC792150462200BC78D7 /* http_parser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = http_parser.cc; sourceTree = "<group>"; };
+		BF82EC7A2150462200BC78D7 /* http_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http_parser.h; sourceTree = "<group>"; };
+		BF82EC7B2150462200BC78D7 /* inspector_agent.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inspector_agent.cc; sourceTree = "<group>"; };
+		BF82EC7C2150462200BC78D7 /* inspector_agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inspector_agent.h; sourceTree = "<group>"; };
+		BF82EC7D2150462200BC78D7 /* inspector_io.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inspector_io.cc; sourceTree = "<group>"; };
+		BF82EC7E2150462200BC78D7 /* inspector_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inspector_io.h; sourceTree = "<group>"; };
+		BF82EC7F2150462200BC78D7 /* inspector_socket.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inspector_socket.cc; sourceTree = "<group>"; };
+		BF82EC802150462200BC78D7 /* inspector_socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inspector_socket.h; sourceTree = "<group>"; };
+		BF82EC812150462200BC78D7 /* inspector_socket_server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inspector_socket_server.cc; sourceTree = "<group>"; };
+		BF82EC822150462200BC78D7 /* inspector_socket_server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inspector_socket_server.h; sourceTree = "<group>"; };
+		BF82EC832150462200BC78D7 /* js_protocol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = js_protocol.json; sourceTree = "<group>"; };
+		BF82EC842150462200BC78D7 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		BF82EC852150462200BC78D7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BF82EC862150462200BC78D7 /* sample.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sample.js; sourceTree = "<group>"; };
+		BF8757AE214AC16900024300 /* libv8_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_initializers.a; sourceTree = "<group>"; };
+		BF8757AF214AC16A00024300 /* libv8_libsampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libsampler.a; sourceTree = "<group>"; };
+		BF8757B0214AC16A00024300 /* libtorque_generated_initializers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtorque_generated_initializers.a; sourceTree = "<group>"; };
+		BF8757B1214AC16A00024300 /* libwasm_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_fuzzer.a; sourceTree = "<group>"; };
+		BF8757B2214AC16A00024300 /* libwasm_module_runner.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_module_runner.a; sourceTree = "<group>"; };
+		BF8757B3214AC16A00024300 /* libwasm_async_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_async_fuzzer.a; sourceTree = "<group>"; };
+		BF8757B4214AC16A00024300 /* libv8_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_base.a; sourceTree = "<group>"; };
+		BF8757B5214AC16A00024300 /* libv8_external_snapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_external_snapshot.a; sourceTree = "<group>"; };
+		BF8757B6214AC16A00024300 /* libmulti_return_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmulti_return_fuzzer.a; sourceTree = "<group>"; };
+		BF8757B7214AC16A00024300 /* libregexp_builtins_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libregexp_builtins_fuzzer.a; sourceTree = "<group>"; };
+		BF8757B8214AC16A00024300 /* libv8_libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libbase.a; sourceTree = "<group>"; };
+		BF8757B9214AC16A00024300 /* libv8_nosnapshot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_nosnapshot.a; sourceTree = "<group>"; };
+		BF8757BA214AC16A00024300 /* libv8_libplatform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_libplatform.a; sourceTree = "<group>"; };
+		BF8757BB214AC16A00024300 /* libfuzzer_support.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfuzzer_support.a; sourceTree = "<group>"; };
+		BF8757BC214AC16A00024300 /* libwasm_code_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_code_fuzzer.a; sourceTree = "<group>"; };
+		BF8757BD214AC16A00024300 /* libwasm_compile_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_compile_fuzzer.a; sourceTree = "<group>"; };
+		BF8757BE214AC16A00024300 /* libwasm_imports_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_imports_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757BF214AC16A00024300 /* libregexp_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libregexp_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C0214AC16B00024300 /* libwasm_types_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_types_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C1214AC16B00024300 /* libjson_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjson_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C2214AC16B00024300 /* lib_wasm_fuzzer_common.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = lib_wasm_fuzzer_common.a; sourceTree = "<group>"; };
+		BF8757C3214AC16B00024300 /* libwasm_memory_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_memory_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C4214AC16B00024300 /* libwasm_function_sigs_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_function_sigs_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C5214AC16B00024300 /* libwasm_names_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_names_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C6214AC16B00024300 /* libparser_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libparser_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C7214AC16B00024300 /* libwasm_data_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_data_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757C8214AC16B00024300 /* libv8_init.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8_init.a; sourceTree = "<group>"; };
+		BF8757C9214AC16B00024300 /* libwasm_globals_section_fuzzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwasm_globals_section_fuzzer.a; sourceTree = "<group>"; };
+		BF8757CA214AC16B00024300 /* libtorque_base.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtorque_base.a; sourceTree = "<group>"; };
+		BF8757E8214AC25300024300 /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicui18n.a; sourceTree = "<group>"; };
+		BF8757E9214AC25300024300 /* libinspector.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libinspector.a; sourceTree = "<group>"; };
+		BF8757EA214AC25400024300 /* libicuuc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libicuuc.a; sourceTree = "<group>"; };
 		BF89F6B41B4AB9DC00F58561 /* SoyAssert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoyAssert.cpp; path = src/SoyAssert.cpp; sourceTree = "<group>"; };
 		BF89F6B51B4AB9DC00F58561 /* SoyAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoyAssert.h; path = src/SoyAssert.h; sourceTree = "<group>"; };
 		BF89F6B81B4AE28F00F58561 /* SoyMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoyMath.cpp; path = src/SoyMath.cpp; sourceTree = "<group>"; };
@@ -338,54 +350,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6554252132C4D9003E4241 /* libwasm_globals_section_fuzzer.a in Frameworks */,
-				BF6554092132C4D9003E4241 /* libfuzzer_support.a in Frameworks */,
-				BF65541D2132C4D9003E4241 /* libv8_libplatform.a in Frameworks */,
-				BF6554102132C4D9003E4241 /* libmulti_return_fuzzer.a in Frameworks */,
+				BF8757E1214AC16B00024300 /* libwasm_function_sigs_section_fuzzer.a in Frameworks */,
 				BF6EB33521111D2900FC991B /* VideoToolbox.framework in Frameworks */,
+				BF8757D9214AC16B00024300 /* libwasm_code_fuzzer.a in Frameworks */,
 				BF6EB32D21111C8300FC991B /* CoreMedia.framework in Frameworks */,
-				BF65540D2132C4D9003E4241 /* libicuuc.a in Frameworks */,
+				BF8757CD214AC16B00024300 /* libtorque_generated_initializers.a in Frameworks */,
+				BF8757CE214AC16B00024300 /* libwasm_fuzzer.a in Frameworks */,
+				BF8757D8214AC16B00024300 /* libfuzzer_support.a in Frameworks */,
+				BF8757EC214AC25400024300 /* libinspector.a in Frameworks */,
+				BF8757DF214AC16B00024300 /* lib_wasm_fuzzer_common.a in Frameworks */,
 				BF6EB32B21111C6600FC991B /* AVFoundation.framework in Frameworks */,
-				BF6554192132C4D9003E4241 /* libv8_external_snapshot.a in Frameworks */,
-				BF65542A2132C4D9003E4241 /* libwasm_types_section_fuzzer.a in Frameworks */,
-				BF6554282132C4D9003E4241 /* libwasm_module_runner.a in Frameworks */,
-				BF6554202132C4D9003E4241 /* libwasm_code_fuzzer.a in Frameworks */,
-				BF65541E2132C4D9003E4241 /* libv8_libsampler.a in Frameworks */,
 				EB0EA5712110BAD7008D6DAA /* Accelerate.framework in Frameworks */,
+				BF8757D2214AC16B00024300 /* libv8_external_snapshot.a in Frameworks */,
+				BF8757E6214AC16B00024300 /* libwasm_globals_section_fuzzer.a in Frameworks */,
 				BF689AC820D6C811000BC812 /* ApplicationServices.framework in Frameworks */,
-				BF65541F2132C4D9003E4241 /* libwasm_async_fuzzer.a in Frameworks */,
-				BF6554152132C4D9003E4241 /* libtorque_base.a in Frameworks */,
 				BF689AC620D6C80D000BC812 /* CoreGraphics.framework in Frameworks */,
 				BF9CCABF1B6E799D000B19EA /* OpenCL.framework in Frameworks */,
-				BF6554292132C4D9003E4241 /* libwasm_names_section_fuzzer.a in Frameworks */,
-				BF6554122132C4D9003E4241 /* libparser_fuzzer.a in Frameworks */,
+				BF8757ED214AC25400024300 /* libicuuc.a in Frameworks */,
 				BF321B051B67AD990016E903 /* CoreVideo.framework in Frameworks */,
-				BF65540F2132C4D9003E4241 /* libjson_fuzzer.a in Frameworks */,
-				BF6554082132C4D9003E4241 /* libcctest_sources.a in Frameworks */,
-				BF65540E2132C4D9003E4241 /* libinspector.a in Frameworks */,
-				BF6554162132C4D9003E4241 /* libtorque_generated_initializers.a in Frameworks */,
-				BF6554112132C4D9003E4241 /* liboptions_sources.a in Frameworks */,
-				BF6554242132C4D9003E4241 /* libwasm_fuzzer.a in Frameworks */,
-				BF6554272132C4D9003E4241 /* libwasm_memory_section_fuzzer.a in Frameworks */,
-				BF65541B2132C4D9003E4241 /* libv8_initializers.a in Frameworks */,
-				BF65541A2132C4D9003E4241 /* libv8_init.a in Frameworks */,
-				BF65540A2132C4D9003E4241 /* libgmock_main.a in Frameworks */,
-				BF65541C2132C4D9003E4241 /* libv8_libbase.a in Frameworks */,
+				BF8757E5214AC16B00024300 /* libv8_init.a in Frameworks */,
 				BFE572801B541B3400B17528 /* CoreServices.framework in Frameworks */,
-				BF65540B2132C4D9003E4241 /* libgtest.a in Frameworks */,
+				BF8757CB214AC16B00024300 /* libv8_initializers.a in Frameworks */,
+				BF8757DB214AC16B00024300 /* libwasm_imports_section_fuzzer.a in Frameworks */,
+				BF8757CC214AC16B00024300 /* libv8_libsampler.a in Frameworks */,
 				FB2534F61A975CF300A61590 /* OpenGL.framework in Frameworks */,
-				BF6554072132C4D9003E4241 /* lib_wasm_fuzzer_common.a in Frameworks */,
-				BF65540C2132C4D9003E4241 /* libicui18n.a in Frameworks */,
-				BF6554142132C4D9003E4241 /* libregexp_fuzzer.a in Frameworks */,
-				BF6554132132C4D9003E4241 /* libregexp_builtins_fuzzer.a in Frameworks */,
-				BF6554262132C4D9003E4241 /* libwasm_imports_section_fuzzer.a in Frameworks */,
-				BF6554182132C4D9003E4241 /* libv8_base.a in Frameworks */,
+				BF8757D0214AC16B00024300 /* libwasm_async_fuzzer.a in Frameworks */,
+				BF8757E7214AC16B00024300 /* libtorque_base.a in Frameworks */,
+				BF8757D1214AC16B00024300 /* libv8_base.a in Frameworks */,
+				BF8757DE214AC16B00024300 /* libjson_fuzzer.a in Frameworks */,
+				BF8757CF214AC16B00024300 /* libwasm_module_runner.a in Frameworks */,
+				BF8757D4214AC16B00024300 /* libregexp_builtins_fuzzer.a in Frameworks */,
+				BF8757D3214AC16B00024300 /* libmulti_return_fuzzer.a in Frameworks */,
+				BF8757DC214AC16B00024300 /* libregexp_fuzzer.a in Frameworks */,
+				BF8757E2214AC16B00024300 /* libwasm_names_section_fuzzer.a in Frameworks */,
+				BF8757E4214AC16B00024300 /* libwasm_data_section_fuzzer.a in Frameworks */,
+				BF8757EB214AC25400024300 /* libicui18n.a in Frameworks */,
+				BF8757DA214AC16B00024300 /* libwasm_compile_fuzzer.a in Frameworks */,
+				BF8757D7214AC16B00024300 /* libv8_libplatform.a in Frameworks */,
 				FB2534F51A975CED00A61590 /* Cocoa.framework in Frameworks */,
+				BF8757DD214AC16B00024300 /* libwasm_types_section_fuzzer.a in Frameworks */,
+				BF8757D5214AC16B00024300 /* libv8_libbase.a in Frameworks */,
+				BF8757E0214AC16B00024300 /* libwasm_memory_section_fuzzer.a in Frameworks */,
+				BF8757E3214AC16B00024300 /* libparser_fuzzer.a in Frameworks */,
 				EB0EA56F2110BA27008D6DAA /* libdlib.a in Frameworks */,
-				BF6554232132C4D9003E4241 /* libwasm_function_sigs_section_fuzzer.a in Frameworks */,
-				BF6554222132C4D9003E4241 /* libwasm_data_section_fuzzer.a in Frameworks */,
-				BF6554212132C4D9003E4241 /* libwasm_compile_fuzzer.a in Frameworks */,
-				BF6554172132C4D9003E4241 /* libunittests_sources.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +402,7 @@
 		BF6553C32132C4D9003E4241 /* v8 */ = {
 			isa = PBXGroup;
 			children = (
+				BF82EC772150462200BC78D7 /* hsharsha */,
 				BF3786E82132C81D008E4350 /* v8Runtime */,
 				BF6553C42132C4D9003E4241 /* include */,
 				BF6553D92132C4D9003E4241 /* lib */,
@@ -440,42 +448,38 @@
 		BF6553D92132C4D9003E4241 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				BF6553DA2132C4D9003E4241 /* lib_wasm_fuzzer_common.a */,
-				BF6553DB2132C4D9003E4241 /* libcctest_sources.a */,
-				BF6553DC2132C4D9003E4241 /* libfuzzer_support.a */,
-				BF6553DD2132C4D9003E4241 /* libgmock_main.a */,
-				BF6553DE2132C4D9003E4241 /* libgtest.a */,
-				BF6553DF2132C4D9003E4241 /* libicui18n.a */,
-				BF6553E02132C4D9003E4241 /* libicuuc.a */,
-				BF6553E12132C4D9003E4241 /* libinspector.a */,
-				BF6553E22132C4D9003E4241 /* libjson_fuzzer.a */,
-				BF6553E32132C4D9003E4241 /* libmulti_return_fuzzer.a */,
-				BF6553E42132C4D9003E4241 /* liboptions_sources.a */,
-				BF6553E52132C4D9003E4241 /* libparser_fuzzer.a */,
-				BF6553E62132C4D9003E4241 /* libregexp_builtins_fuzzer.a */,
-				BF6553E72132C4D9003E4241 /* libregexp_fuzzer.a */,
-				BF6553E82132C4D9003E4241 /* libtorque_base.a */,
-				BF6553E92132C4D9003E4241 /* libtorque_generated_initializers.a */,
-				BF6553EA2132C4D9003E4241 /* libunittests_sources.a */,
-				BF6553EB2132C4D9003E4241 /* libv8_base.a */,
-				BF6553EC2132C4D9003E4241 /* libv8_external_snapshot.a */,
-				BF6553ED2132C4D9003E4241 /* libv8_init.a */,
-				BF6553EE2132C4D9003E4241 /* libv8_initializers.a */,
-				BF6553EF2132C4D9003E4241 /* libv8_libbase.a */,
-				BF6553F02132C4D9003E4241 /* libv8_libplatform.a */,
-				BF6553F12132C4D9003E4241 /* libv8_libsampler.a */,
-				BF6553F22132C4D9003E4241 /* libwasm_async_fuzzer.a */,
-				BF6553F32132C4D9003E4241 /* libwasm_code_fuzzer.a */,
-				BF6553F42132C4D9003E4241 /* libwasm_compile_fuzzer.a */,
-				BF6553F52132C4D9003E4241 /* libwasm_data_section_fuzzer.a */,
-				BF6553F62132C4D9003E4241 /* libwasm_function_sigs_section_fuzzer.a */,
-				BF6553F72132C4D9003E4241 /* libwasm_fuzzer.a */,
-				BF6553F82132C4D9003E4241 /* libwasm_globals_section_fuzzer.a */,
-				BF6553F92132C4D9003E4241 /* libwasm_imports_section_fuzzer.a */,
-				BF6553FA2132C4D9003E4241 /* libwasm_memory_section_fuzzer.a */,
-				BF6553FB2132C4D9003E4241 /* libwasm_module_runner.a */,
-				BF6553FC2132C4D9003E4241 /* libwasm_names_section_fuzzer.a */,
-				BF6553FD2132C4D9003E4241 /* libwasm_types_section_fuzzer.a */,
+				BF8757E8214AC25300024300 /* libicui18n.a */,
+				BF8757EA214AC25400024300 /* libicuuc.a */,
+				BF8757E9214AC25300024300 /* libinspector.a */,
+				BF8757C2214AC16B00024300 /* lib_wasm_fuzzer_common.a */,
+				BF8757BB214AC16A00024300 /* libfuzzer_support.a */,
+				BF8757C1214AC16B00024300 /* libjson_fuzzer.a */,
+				BF8757B6214AC16A00024300 /* libmulti_return_fuzzer.a */,
+				BF8757C6214AC16B00024300 /* libparser_fuzzer.a */,
+				BF8757B7214AC16A00024300 /* libregexp_builtins_fuzzer.a */,
+				BF8757BF214AC16A00024300 /* libregexp_fuzzer.a */,
+				BF8757CA214AC16B00024300 /* libtorque_base.a */,
+				BF8757B0214AC16A00024300 /* libtorque_generated_initializers.a */,
+				BF8757B4214AC16A00024300 /* libv8_base.a */,
+				BF8757B5214AC16A00024300 /* libv8_external_snapshot.a */,
+				BF8757C8214AC16B00024300 /* libv8_init.a */,
+				BF8757AE214AC16900024300 /* libv8_initializers.a */,
+				BF8757B8214AC16A00024300 /* libv8_libbase.a */,
+				BF8757BA214AC16A00024300 /* libv8_libplatform.a */,
+				BF8757AF214AC16A00024300 /* libv8_libsampler.a */,
+				BF8757B9214AC16A00024300 /* libv8_nosnapshot.a */,
+				BF8757B3214AC16A00024300 /* libwasm_async_fuzzer.a */,
+				BF8757BC214AC16A00024300 /* libwasm_code_fuzzer.a */,
+				BF8757BD214AC16A00024300 /* libwasm_compile_fuzzer.a */,
+				BF8757C7214AC16B00024300 /* libwasm_data_section_fuzzer.a */,
+				BF8757C4214AC16B00024300 /* libwasm_function_sigs_section_fuzzer.a */,
+				BF8757B1214AC16A00024300 /* libwasm_fuzzer.a */,
+				BF8757C9214AC16B00024300 /* libwasm_globals_section_fuzzer.a */,
+				BF8757BE214AC16A00024300 /* libwasm_imports_section_fuzzer.a */,
+				BF8757C3214AC16B00024300 /* libwasm_memory_section_fuzzer.a */,
+				BF8757B2214AC16A00024300 /* libwasm_module_runner.a */,
+				BF8757C5214AC16B00024300 /* libwasm_names_section_fuzzer.a */,
+				BF8757C0214AC16B00024300 /* libwasm_types_section_fuzzer.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -503,6 +507,29 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		BF82EC772150462200BC78D7 /* hsharsha */ = {
+			isa = PBXGroup;
+			children = (
+				BF82EC782150462200BC78D7 /* base64.h */,
+				BF82EC792150462200BC78D7 /* http_parser.cc */,
+				BF82EC7A2150462200BC78D7 /* http_parser.h */,
+				BF82EC7B2150462200BC78D7 /* inspector_agent.cc */,
+				BF82EC7C2150462200BC78D7 /* inspector_agent.h */,
+				BF82EC7D2150462200BC78D7 /* inspector_io.cc */,
+				BF82EC7E2150462200BC78D7 /* inspector_io.h */,
+				BF82EC7F2150462200BC78D7 /* inspector_socket.cc */,
+				BF82EC802150462200BC78D7 /* inspector_socket.h */,
+				BF82EC812150462200BC78D7 /* inspector_socket_server.cc */,
+				BF82EC822150462200BC78D7 /* inspector_socket_server.h */,
+				BF82EC832150462200BC78D7 /* js_protocol.json */,
+				BF82EC842150462200BC78D7 /* main.cc */,
+				BF82EC852150462200BC78D7 /* Readme.md */,
+				BF82EC862150462200BC78D7 /* sample.js */,
+			);
+			name = hsharsha;
+			path = src/hsharsha;
+			sourceTree = SOURCE_ROOT;
 		};
 		FB5702CA1A5FDC8800449FF3 /* stb */ = {
 			isa = PBXGroup;
@@ -738,11 +765,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF82EC8E2150462200BC78D7 /* Readme.md in Resources */,
+				BF82EC8C2150462200BC78D7 /* js_protocol.json in Resources */,
 				BF6554062132C4D9003E4241 /* PRESUBMIT.py in Resources */,
 				BF6554052132C4D9003E4241 /* OWNERS in Resources */,
 				BF6554042132C4D9003E4241 /* DEPS in Resources */,
 				BF65537E2132BD6B003E4241 /* Data_HelloWorld in Resources */,
 				BFD4456520E67037007E2497 /* V8Minimal.xib in Resources */,
+				BF82EC8F2150462200BC78D7 /* sample.js in Resources */,
 				BF6554022132C4D9003E4241 /* APIDesign.md in Resources */,
 				BF6554032132C4D9003E4241 /* DEPS in Resources */,
 				BF3786E92132C81D008E4350 /* v8Runtime in Resources */,
@@ -757,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA664731B55AD0A00C33A2A /* SoyString.mm in Sources */,
+				BF82EC9021504CFF00BC78D7 /* inspector_io.cc in Sources */,
 				BFD4456820E6711A007E2497 /* SoyRuntimeLibrary.cpp in Sources */,
 				BFAD33DD1B6406D500D3E7A6 /* SoyVideoDevice.cpp in Sources */,
 				EBC8FA5F21131F000014E998 /* SoySocketStream.cpp in Sources */,
@@ -765,12 +796,12 @@
 				FB2534DD1A974E7B00A61590 /* SoyTypes.cpp in Sources */,
 				BFDE38031C8B446A00D10F02 /* SoyUnity.mm in Sources */,
 				BF5B07151B5C12E700C489C6 /* SoyShader.cpp in Sources */,
-				BFFFA8142147D88700FA3A8B /* v8Minimal.cpp in Sources */,
 				BF89F6CB1B4BCB9E00F58561 /* SoyOpenglContext.cpp in Sources */,
 				BFCA77A02149686600564BD1 /* SoyV8.cpp in Sources */,
 				FB2534D31A974E7B00A61590 /* SoyMemFile.cpp in Sources */,
 				BFDE37FA1C89B20D00D10F02 /* SoyMedia.cpp in Sources */,
 				BF689AD120D6DA42000BC812 /* SoyGraphics.cpp in Sources */,
+				BF82EC8D2150462200BC78D7 /* main.cc in Sources */,
 				FB2534D71A974E7B00A61590 /* SoyRingArray.cpp in Sources */,
 				FB2534D51A974E7B00A61590 /* SoyPng.cpp in Sources */,
 				EBC8FA5C21131E9F0014E998 /* TApiWebsocket.cpp in Sources */,
@@ -783,6 +814,7 @@
 				BFA297211B7E9CF7003B91F6 /* SoyUniform.cpp in Sources */,
 				FB2534D61A974E7B00A61590 /* SoyRef.cpp in Sources */,
 				BFCA77A621496DD800564BD1 /* SoyWebSocket.cpp in Sources */,
+				BF82EC882150462200BC78D7 /* inspector_agent.cc in Sources */,
 				BF691F021C3FEEE90092FC34 /* SoySrt.cpp in Sources */,
 				BF689AD420D6DA52000BC812 /* SoyMediaFormat.cpp in Sources */,
 				FB2534D01A974E7B00A61590 /* SoyDebug.cpp in Sources */,
@@ -808,6 +840,7 @@
 				BF89F6BF1B4B14CD00F58561 /* SoyVector.cpp in Sources */,
 				FB2534DB1A974E7B00A61590 /* SoyThread.cpp in Sources */,
 				BF6EB33A21111D7200FC991B /* SoyTime.cpp in Sources */,
+				BF82EC872150462200BC78D7 /* http_parser.cc in Sources */,
 				FB2534CF1A974E7B00A61590 /* SoyArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +936,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NewChromantics.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = V8InspectorMinimalMac;
+				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
@@ -926,6 +960,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NewChromantics.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = V8InspectorMinimalMac;
+				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;
