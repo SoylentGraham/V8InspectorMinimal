@@ -4,6 +4,7 @@
 
 #include "TV8Inspector.h"
 #include "TV8Platform.h"
+#include "TV8MessageChannel.h"
 #include "include/v8-inspector.h"
 
 using namespace v8;
@@ -12,95 +13,6 @@ using namespace v8_inspector;
 
 std::shared_ptr<v8::Platform>	gPlatform;
 std::shared_ptr<V8Inspector>	gInspector;
-
-//	no websocket, just some pre made commands captured from chrome dev tools
-//#define USE_PREBAKED_COMMANDS
-
-#if !defined(USE_PREBAKED_COMMANDS)
-#define ENABLE_WEBSOCKET
-#endif
-
-#if defined(USE_PREBAKED_COMMANDS)
-std::vector<std::string> PrebakedCommands{
-	"Message={\"id\":1,\"method\":\"Profiler.enable\"}",
-	"Message={\"id\":2,\"method\":\"Runtime.enable\"}"
-	/*
-	Message={"id":1,"method":"Profiler.enable"}
-	Message={"id":2,"method":"Runtime.enable"}
-	Message={"id":3,"method":"Debugger.enable"}
-	Message={"id":4,"method":"Debugger.setPauseOnExceptions","params":{"state":"all"}}
-	Message={"id":5,"method":"Debugger.setAsyncCallStackDepth","params":{"maxDepth":32}}
-	Message={"id":6,"method":"Debugger.setBlackboxPatterns","params":{"patterns":["/main\\.js\\b"]}}
-	Message={"id":7,"method":"Runtime.runIfWaitingForDebugger"}
-	Message={"id":8,"method":"Debugger.setSkipAllPauses","params":{"skip":false}}
-	Message={"id":9,"method":"Debugger.pause"}
-	Message={"id":10,"method":"Runtime.evaluate","params":{"expression":"this","objectGroup":"completion","includeCommandLineAPI":true,"silent":true,"contextId":1,"returnByValue":false,"generatePreview":false,"userGesture":false,"awaitPromise":false,"throwOnSideEffect":false}}
-	Message={"id":11,"method":"Runtime.evaluate","params":{"expression":"(async function(){ await 1; })()","contextId":1,"throwOnSideEffect":true}}
-	Message={"id":12,"method":"Runtime.evaluate","params":{"expression":"(Log)","objectGroup":"argumentsHint","includeCommandLineAPI":true,"silent":true,"contextId":1,"returnByValue":false,"generatePreview":false,"userGesture":false,"awaitPromise":false,"throwOnSideEffect":false}}
-	Message={"id":13,"method":"Runtime.compileScript","params":{"expression":"Log(\"he\");","sourceURL":"","persistScript":false,"executionContextId":1}}
-	Message={"id":14,"method":"Runtime.compileScript","params":{"expression":"Log(\"he\")","sourceURL":"","persistScript":false,"executionContextId":1}}
-	Message={"id":15,"method":"Runtime.compileScript","params":{"expression":"Log(\"he\")","sourceURL":"","persistScript":false,"executionContextId":1}}
-	Message={"id":16,"method":"Runtime.compileScript","params":{"expression":"Log(\"he\")","sourceURL":"","persistScript":false,"executionContextId":1}}
-	Message={"id":17,"method":"Debugger.getScriptSource","params":{"scriptId":"10"}}
-	Message={"id":18,"method":"Runtime.callFunctionOn","params":{"objectId":"{\"injectedScriptId\":1,\"id\":3}","functionDeclaration":"function getCompletions(type){let object;if(type==='string')\nobject=new String('');else if(type==='number')\nobject=new Number(0);else if(type==='bigint')\nobject=Object(BigInt(0));else if(type==='boolean')\nobject=new Boolean(false);else\nobject=this;const result=[];try{for(let o=object;o;o=Object.getPrototypeOf(o)){if((type==='array'||type==='typedarray')&&o===object&&o.length>9999)\ncontinue;const group={items:[],__proto__:null};try{if(typeof o==='object'&&o.constructor&&o.constructor.name)\ngroup.title=o.constructor.name;}catch(ee){}\nresult[result.length]=group;const names=Object.getOwnPropertyNames(o);const isArray=Array.isArray(o);for(let i=0;i<names.length&&group.items.length<10000;++i){if(isArray&&/^[0-9]/.test(names[i]))\ncontinue;group.items[group.items.length]=names[i];}}}catch(e){}\nreturn result;}","arguments":[{}],"silent":true,"returnByValue":true}}
-	Message={"id":19,"method":"Runtime.evaluate","params":{"expression":"D","includeCommandLineAPI":true,"contextId":1,"generatePreview":true,"userGesture":true,"awaitPromise":false,"throwOnSideEffect":true,"timeout":500}}
-*/
-};
-#else
-#include "TApiWebsocket.h"
-#endif
-
-
-
-class TMessageSource
-{
-public:
-	TMessageSource(std::function<void(const std::string&)> OnMessage) :
-		mOnMessage	( OnMessage )
-	{
-	}
-	
-	virtual ~TMessageSource()	{}
-
-	virtual void	SendResponse(const std::string& Message)=0;
-	
-protected:
-	void	OnMessage(const std::string& Message)
-	{
-		mOnMessage( Message );
-	}
-	
-	std::function<void(const std::string&)>	mOnMessage;
-};
-
-
-#if defined(ENABLE_WEBSOCKET)
-class TWebsocketMessageSource : public TMessageSource
-{
-public:
-	TWebsocketMessageSource(uint16_t ListenPort,std::function<void(const std::string&)> OnMessage);
-	
-	virtual void	SendResponse(const std::string& Message) override
-	{
-		mWebsocketServer->Send( mWebsocketClient, Message );
-	}
-	
-	std::shared_ptr<TWebsocketServer>	mWebsocketServer;
-	SoyRef								mWebsocketClient;	//	hack; record last client who we just send responses back to
-};
-#endif
-
-
-class TPredefinedMessageSource : public TMessageSource
-{
-public:
-	TPredefinedMessageSource(const std::vector<std::string>& Messages,std::function<void(const std::string&)> OnMessage);
-	
-	virtual void	SendResponse(const std::string& Message) override
-	{
-	}
-};
-
 
 class InspectorClientImpl : public v8_inspector::V8InspectorClient
 {
@@ -239,9 +151,9 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 	std::shared_ptr<V8InspectorSession>		mSession;
 	
 #if defined(ENABLE_WEBSOCKET)
-	std::shared_ptr<TMessageSource>	mMessageSource( new TWebsocketMessageSource(8008,OnMessage) );
+	std::shared_ptr<TV8MessageChannel>	mMessageSource( new TWebsocketMessageChannel(8008,OnMessage) );
 #else
-	std::shared_ptr<TMessageSource>	mMessageSource( new TPredefinedMessageSource(PrebakedCommands,OnMessage) );
+	std::shared_ptr<TV8MessageChannel>	mMessageSource( new TPredefinedMessageChannel(PrebakedCommands,OnMessage) );
 #endif
 	
 	
@@ -304,7 +216,7 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 	
 	while ( true )
 	{
-		if ( false && !RunOnlyMessagesInLoop )
+		if ( !RunOnlyMessagesInLoop )
 		{
 			while (v8::platform::PumpMessageLoop(gPlatform.get(), isolate))
 			{
@@ -402,7 +314,7 @@ void v8min_main(const std::string& mRootDirectory)
 	V8::InitializeExternalStartupData( NativesBlobPath.c_str(), SnapshotBlobPath.c_str() );
 	
 	//std::unique_ptr<v8::Platform> platform = v8::platform::CreateDefaultPlatform();
-	//mPlatform.reset( v8::platform::CreateDefaultPlatform() );
+	//gPlatform.reset( v8::platform::CreateDefaultPlatform() );
 	gPlatform.reset( new TV8Platform() );
 	V8::InitializePlatform( gPlatform.get() );
 	V8::Initialize();
@@ -442,79 +354,3 @@ int main(int argc,const char* argv[])
 	v8min_main(RootDir);
 }
 
-
-#if defined(ENABLE_WEBSOCKET)
-TWebsocketMessageSource::TWebsocketMessageSource(uint16_t ListenPort,std::function<void(const std::string&)> OnMessage) :
-	TMessageSource	( OnMessage )
-{
-	auto OnTextMessage = [this](SoyRef Connection,const std::string& Message)
-	{
-		mWebsocketClient = Connection;
-		this->OnMessage( Message );
-	};
-	auto OnBinaryMessage = [](SoyRef Connection,const Array<uint8_t>& Message)
-	{
-		std::Debug << "Got binary messaage from websocket x" << Message.GetSize() << std::endl;
-	};
-	
-	auto InspectorPorts = {ListenPort, static_cast<uint16_t>(0) };
-	for ( auto InspectorPort : InspectorPorts )
-	{
-		try
-		{
-			mWebsocketServer.reset( new TWebsocketServer(InspectorPort,OnTextMessage,OnBinaryMessage) );
-			break;
-		}
-		catch(std::exception& e)
-		{
-			std::Debug << e.what() << std::endl;
-		}
-	}
-	if ( !mWebsocketServer )
-		throw Soy::AssertException("Failed to open websocket server");
-	
-	
-	auto GetWebsocketAddress = [&]
-	{
-		std::string WebsocketAddress;
-		auto EnumSocketAddress = [&](const std::string& InterfaceName,SoySockAddr& Address)
-		{
-			if ( !WebsocketAddress.empty() )
-				return;
-			std::stringstream WebsocketAddressStr;
-			WebsocketAddressStr << Address;
-			WebsocketAddress = WebsocketAddressStr.str();
-		};
-		auto& Socket = mWebsocketServer->GetSocket();
-		Socket.GetSocketAddresses(EnumSocketAddress);
-		
-		return WebsocketAddress;
-	};
-	
-	auto GetChromeDebuggerUrl = [&]
-	{
-		//	lets skip the auto stuff for now!
-		//	chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:14549
-		auto WebsocketAddress = GetWebsocketAddress();
-		std::stringstream ChromeUrl;
-		ChromeUrl << "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=" << WebsocketAddress;
-		return ChromeUrl.str();
-	};
-	
-	std::stringstream OpenUrl;
-	OpenUrl << "http://" << GetChromeDebuggerUrl();
-	auto str = OpenUrl.str();
-	::Platform::ShellOpenUrl(str);
-	std::Debug << "Open chrome inspector: " << GetChromeDebuggerUrl() << std::endl;
-	
-}
-#endif
-
-TPredefinedMessageSource::TPredefinedMessageSource(const std::vector<std::string>& Messages,std::function<void(const std::string&)> OnMessage) :
-	TMessageSource	( OnMessage )
-{
-	for ( auto& Message : Messages )
-	{
-		OnMessage( Message );
-	}
-}
