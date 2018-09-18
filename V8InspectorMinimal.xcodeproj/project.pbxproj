@@ -71,6 +71,7 @@
 		BF6EB33D21111D7A00FC991B /* SoyH264.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6EB33C21111D7A00FC991B /* SoyH264.cpp */; };
 		BF7225AA1BADCB3B00550AD8 /* SoyStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7225A81BADCB3B00550AD8 /* SoyStream.cpp */; };
 		BF7225AD1BADCC3900550AD8 /* SoyProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7225AB1BADCC3900550AD8 /* SoyProtocol.cpp */; };
+		BF82EC9D2151249F00BC78D7 /* v8Minimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFFFA8132147D88600FA3A8B /* v8Minimal.cpp */; };
 		BF89F6B71B4AB9DC00F58561 /* SoyAssert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6B41B4AB9DC00F58561 /* SoyAssert.cpp */; };
 		BF89F6BB1B4AE28F00F58561 /* SoyMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6B81B4AE28F00F58561 /* SoyMath.cpp */; };
 		BF89F6BF1B4B14CD00F58561 /* SoyVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF89F6BC1B4B14CD00F58561 /* SoyVector.cpp */; };
@@ -90,7 +91,6 @@
 		BFDE38031C8B446A00D10F02 /* SoyUnity.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFDE38011C8B446A00D10F02 /* SoyUnity.mm */; };
 		BFE572801B541B3400B17528 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5727F1B541B3400B17528 /* CoreServices.framework */; };
 		BFE572851B544E3400B17528 /* SoyFilesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE572831B544E3400B17528 /* SoyFilesystem.cpp */; };
-		BFFFA8142147D88700FA3A8B /* v8Minimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFFFA8132147D88600FA3A8B /* v8Minimal.cpp */; };
 		EB0EA56F2110BA27008D6DAA /* libdlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0EA56E2110BA27008D6DAA /* libdlib.a */; };
 		EB0EA5712110BAD7008D6DAA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0EA5702110BAD7008D6DAA /* Accelerate.framework */; };
 		EB6D678321136A4E00687768 /* SoyBase64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB6D678121136A4E00687768 /* SoyBase64.cpp */; };
@@ -760,12 +760,12 @@
 				BFD4456820E6711A007E2497 /* SoyRuntimeLibrary.cpp in Sources */,
 				BFAD33DD1B6406D500D3E7A6 /* SoyVideoDevice.cpp in Sources */,
 				EBC8FA5F21131F000014E998 /* SoySocketStream.cpp in Sources */,
+				BF82EC9D2151249F00BC78D7 /* v8Minimal.cpp in Sources */,
 				BF31E49F1C56961100AB49AF /* SoyImage.cpp in Sources */,
 				BF89F6BB1B4AE28F00F58561 /* SoyMath.cpp in Sources */,
 				FB2534DD1A974E7B00A61590 /* SoyTypes.cpp in Sources */,
 				BFDE38031C8B446A00D10F02 /* SoyUnity.mm in Sources */,
 				BF5B07151B5C12E700C489C6 /* SoyShader.cpp in Sources */,
-				BFFFA8142147D88700FA3A8B /* v8Minimal.cpp in Sources */,
 				BF89F6CB1B4BCB9E00F58561 /* SoyOpenglContext.cpp in Sources */,
 				BFCA77A02149686600564BD1 /* SoyV8.cpp in Sources */,
 				FB2534D31A974E7B00A61590 /* SoyMemFile.cpp in Sources */,

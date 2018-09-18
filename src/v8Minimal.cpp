@@ -5,12 +5,63 @@
 #include "TV8Inspector.h"
 #include "include/v8-inspector.h"
 
-std::shared_ptr<v8::Platform>	mPlatform;
-std::shared_ptr<V8Inspector>	mInspector;
-
 using namespace v8;
 using namespace v8_inspector;
 
+
+#if !defined(NON_EXPORTED_BASE)
+#define NON_EXPORTED_BASE(X)	X
+#endif
+//#include "v8/src/libplatform/default-platform.h"
+//	seems node AND chromium have the same issue I have
+//	https://github.com/nodejs/node/commit/b1e26128f317a6f5a5808a0a727e98f80f088b84
+//	https://cs.chromium.org/chromium/src/gin/v8_platform.cc?type=cs&q=CallDelayedOnWorkerThread&sq=package:chromium&g=0&l=368
+//	so forced to implement their own platforms and task scheduling.
+//	Ibon didnt.... but still, I can't seem to work around it
+//	gr: as I cannot derive from the default platform (linker can't find typeinfo!)
+//		I create a proxy.
+class TV8Platform : public v8::Platform
+{
+public:
+	TV8Platform() :
+	mpPlatform	( v8::platform::CreateDefaultPlatform() ),
+	mPlatform	( *mpPlatform )
+	{
+		
+	}
+
+	std::shared_ptr<v8::Platform>	mpPlatform;
+	v8::Platform&	mPlatform;
+
+	virtual PageAllocator* GetPageAllocator() override {	return mPlatform.GetPageAllocator();	}
+	virtual void OnCriticalMemoryPressure() override {	mPlatform.OnCriticalMemoryPressure();	}
+	virtual bool OnCriticalMemoryPressure(size_t length) override {	return mPlatform.OnCriticalMemoryPressure(length);	}
+	virtual int NumberOfWorkerThreads() override{	return mPlatform.NumberOfWorkerThreads();	}
+	virtual std::shared_ptr<v8::TaskRunner> GetForegroundTaskRunner(Isolate* isolate) override{	return mPlatform.GetForegroundTaskRunner(isolate);	}
+	virtual void CallOnWorkerThread(std::unique_ptr<Task> task) override{	mPlatform.CallOnWorkerThread( std::move(task) );	}
+	virtual void CallBlockingTaskOnWorkerThread(std::unique_ptr<Task> task) override	{	mPlatform.CallBlockingTaskOnWorkerThread( std::move(task) );	}
+	//virtual void CallDelayedOnWorkerThread(std::unique_ptr<Task> task,double delay_in_seconds) override	{	mPlatform.CallDelayedOnWorkerThread( std::move(task),delay_in_seconds);	}
+	virtual void CallOnForegroundThread(Isolate* isolate, Task* task) override	{	mPlatform.CallOnForegroundThread(isolate, task);	}
+	virtual void CallDelayedOnForegroundThread(Isolate* isolate, Task* task, double delay_in_seconds) override	{	mPlatform.CallDelayedOnForegroundThread( isolate, task, delay_in_seconds );	}
+	virtual void CallIdleOnForegroundThread(Isolate* isolate, IdleTask* task) override	{	mPlatform.CallIdleOnForegroundThread(isolate, task);	}
+	virtual bool IdleTasksEnabled(Isolate* isolate) override	{	return mPlatform.IdleTasksEnabled(isolate);	}
+	virtual double MonotonicallyIncreasingTime() override	{	return mPlatform.MonotonicallyIncreasingTime();	}
+	virtual double CurrentClockTimeMillis() override	{	return mPlatform.CurrentClockTimeMillis();	}
+	virtual StackTracePrinter GetStackTracePrinter() override	{	return mPlatform.GetStackTracePrinter();	}
+	virtual TracingController* GetTracingController() override	{	return mPlatform.GetTracingController();	}
+	
+	virtual void CallDelayedOnWorkerThread(std::unique_ptr<Task> task,double delay_in_seconds) override
+	{
+		delay_in_seconds = 0;
+		mPlatform.CallDelayedOnWorkerThread( std::move(task),delay_in_seconds);
+	}
+	
+};
+
+
+
+std::shared_ptr<v8::Platform>	gPlatform;
+std::shared_ptr<V8Inspector>	gInspector;
 
 //	no websocket, just some pre made commands captured from chrome dev tools
 //#define USE_PREBAKED_COMMANDS
@@ -147,40 +198,48 @@ private:
 	//DISALLOW_COPY_AND_ASSIGN(InspectorClientImpl);
 };
 
+auto TestScriptFilename = "SourceFile.js";
+auto TestScript = R"HELLOMUM(
 
+function Log(str)
+{
+	console.log(str);
+}
 
+Log('Hello!');
+//throw 'xxx';
+
+)HELLOMUM";
 
 void RunHelloWorld(Local<Context> context)
 {
 	auto* isolate = context->GetIsolate();
-	
+	v8::HandleScope handle_scope(isolate);
+
 	// Create a string containing the JavaScript source code.
 	v8::Local<v8::String> source =
-	v8::String::NewFromUtf8(isolate, "function Log(str) { console.log(str); }\nLog('Hello!'); throw 'xxx'",
-							v8::NewStringType::kNormal)
-	.ToLocalChecked();
+	v8::String::NewFromUtf8(isolate, TestScript,v8::NewStringType::kNormal).ToLocalChecked();
 		
 	// Compile the source code.
-	/*
-	static std::string SourceFilename("SourceFile.js");
-	auto OriginStr = v8::GetString(*isolate, SourceFilename );
+	auto OriginStr = v8::GetString(*isolate, TestScriptFilename );
 	auto OriginRow = v8::Integer::New( isolate, 0 );
 	auto OriginCol = v8::Integer::New( isolate, 0 );
 	auto Cors = v8::Boolean::New( isolate, true );
 	static int ScriptIdCounter = 99;
 	auto ScriptId = v8::Integer::New( isolate, ScriptIdCounter++ );
-	auto OriginUrl = v8::GetString(*isolate, std::string("file://")+SourceFilename );
+	auto OriginUrl = v8::GetString(*isolate, std::string("file://")+TestScriptFilename );
 	
 	static std::shared_ptr<v8::ScriptOrigin> HelloWorldOrigin;
 	HelloWorldOrigin.reset( new v8::ScriptOrigin( OriginStr, OriginRow, OriginCol, Cors, ScriptId, OriginUrl ) );
-	 auto* pOrigin = HelloWorldOrigin.get();
-*/
-	v8::ScriptOrigin origin(
-							v8::String::NewFromUtf8(isolate, "http://localhost/abcd.js"),
+	auto* pOrigin = HelloWorldOrigin.get();
+/*
+	v8::ScriptOrigin HelloWorldOrigin(
+							v8::String::NewFromUtf8(isolate, "file://abcd.js"),
 							v8::Integer::New(isolate, 0),
 							v8::Integer::New(isolate, 0)
 							);
-	auto* pOrigin = &origin;
+	auto* pOrigin = &HelloWorldOrigin;
+ */
 	//v8::ScriptOrigin* pOrigin = nullptr;
 	static v8::Local<v8::Script> script =
 	v8::Script::Compile(context, source, pOrigin ).ToLocalChecked();
@@ -208,12 +267,11 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 	global_template->Set(String::NewFromUtf8(isolate, "gl"), gl);
 	
 */
+	v8::HandleScope handle_scope(isolate);
 	v8::Local<v8::Context> context = v8::Context::New(isolate);
 
 	
 	
-	// Enter the context for compiling and running the hello world script.
-	v8::Context::Scope context_scope(context);
 
 
 	Array<std::string> Messages;
@@ -253,19 +311,18 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 	auto DoSendResponse = [&](const std::string& Message)
 	{
 		mMessageSource->SendResponse(Message);
-		/*
-		std::Debug << "Send response " << Message << std::endl;
-		mWebsocketServer->Send( WebsocketClient, Message );
-		 */
 	};
 	
 	{
+		// Enter the context for compiling and running the hello world script.
+		v8::Context::Scope context_scope(context);
+	
 		auto ContextGroupId = 1;
 		mInspectorClient.reset( new InspectorClientImpl(context,RunMessageLoop,QuitMessageLoop) );
-		mInspector = V8Inspector::create( isolate, mInspectorClient.get() );
+		gInspector = V8Inspector::create( isolate, mInspectorClient.get() );
 		TV8StringViewContainer ContextName("TheContextName");
 		V8ContextInfo ContextInfo( context, ContextGroupId, ContextName.GetStringView() );
-		mInspector->contextCreated(ContextInfo);
+		gInspector->contextCreated(ContextInfo);
 
 		// create a v8 channel.
 		// ChannelImpl : public v8_inspector::V8Inspector::Channel
@@ -275,7 +332,7 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 		
 		// Create a debugging session by connecting the V8Inspector
 		// instance to the channel
-		mSession = mInspector->connect( ContextGroupId, mChannel.get(), State.GetStringView() );
+		mSession = gInspector->connect( ContextGroupId, mChannel.get(), State.GetStringView() );
 	}
 	
 	
@@ -286,20 +343,20 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 		Array<uint8_t> MessageBuffer;
 		std::Debug << "Message=" << Message << std::endl;
 		Soy::StringToArray( Message, GetArrayBridge(MessageBuffer) );
-		MessageBuffer.PushBack(0);
-		MessageBuffer.PopBack();
 		v8_inspector::StringView MessageString( MessageBuffer.GetArray(), MessageBuffer.GetSize() );
 		Session->dispatchProtocolMessage(MessageString);
 	};
 	
-	RunHelloWorld(context);
-
+	{
+		v8::Context::Scope context_scope(context);
+		RunHelloWorld(context);
+	}
 	
 	while ( true )
 	{
 		if ( false && !RunOnlyMessagesInLoop )
 		{
-			while (v8::platform::PumpMessageLoop(mPlatform.get(), isolate))
+			while (v8::platform::PumpMessageLoop(gPlatform.get(), isolate))
 			{
 	
 			}
@@ -310,6 +367,10 @@ void v8min_main_helloworld(v8::Isolate* isolate,const std::string& mRootDirector
 			std::lock_guard<std::mutex> Lock( MessagesLock );
 			while ( Messages.GetSize() > 0 )
 			{
+				// Enter the context for compiling and running the hello world script.
+				v8::HandleScope handle_scope(isolate);
+				v8::Context::Scope context_scope(context);
+
 				auto Message = Messages.PopAt(0);
 				SendMessageToSession(Message);
 			}
@@ -328,7 +389,7 @@ void MessageHandler(v8::Local<v8::Message> message, v8::Local<v8::Value> excepti
 	v8::Local<v8::Context> context = isolate_->GetEnteredContext();
 	if (context.IsEmpty())
 		return;
-	v8_inspector::V8Inspector *inspector = mInspector.get();
+	v8_inspector::V8Inspector *inspector = gInspector.get();
 	if ( inspector == nullptr )
 		return;
 	
@@ -391,8 +452,9 @@ void v8min_main(const std::string& mRootDirectory)
 	V8::InitializeExternalStartupData( NativesBlobPath.c_str(), SnapshotBlobPath.c_str() );
 	
 	//std::unique_ptr<v8::Platform> platform = v8::platform::CreateDefaultPlatform();
-	mPlatform.reset( v8::platform::CreateDefaultPlatform() );
-	V8::InitializePlatform( mPlatform.get() );
+	//mPlatform.reset( v8::platform::CreateDefaultPlatform() );
+	gPlatform.reset( new TV8Platform() );
+	V8::InitializePlatform( gPlatform.get() );
 	V8::Initialize();
 	
 	// Create a new Isolate and make it the current one.
@@ -405,7 +467,7 @@ void v8min_main(const std::string& mRootDirectory)
 		v8::Locker locker(isolate);
 		isolate->Enter();
 		v8::Isolate::Scope isolate_scope(isolate);
-		v8::HandleScope handle_scope(isolate);
+		//v8::HandleScope handle_scope(isolate);
 
 		v8min_main_helloworld( isolate, mRootDirectory );
 	}

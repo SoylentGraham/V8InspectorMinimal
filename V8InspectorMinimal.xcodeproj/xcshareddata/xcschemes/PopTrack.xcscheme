@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBF67B0C1A974A0900F74C38"
-               BuildableName = "PopTrackMac.app"
+               BuildableName = "V8InspectorMinimalMac.app"
                BlueprintName = "V8InspectorMinimalMac"
                ReferencedContainer = "container:V8InspectorMinimal.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF67B0C1A974A0900F74C38"
-            BuildableName = "PopTrackMac.app"
+            BuildableName = "V8InspectorMinimalMac.app"
             BlueprintName = "V8InspectorMinimalMac"
             ReferencedContainer = "container:V8InspectorMinimal.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF67B0C1A974A0900F74C38"
-            BuildableName = "PopTrackMac.app"
+            BuildableName = "V8InspectorMinimalMac.app"
             BlueprintName = "V8InspectorMinimalMac"
             ReferencedContainer = "container:V8InspectorMinimal.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF67B0C1A974A0900F74C38"
-            BuildableName = "PopTrackMac.app"
+            BuildableName = "V8InspectorMinimalMac.app"
             BlueprintName = "V8InspectorMinimalMac"
             ReferencedContainer = "container:V8InspectorMinimal.xcodeproj">
          </BuildableReference>
